@@ -2,10 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Avatar from "../Avatar"
 
+import * as S from "./styled"
+
 const Profile = () => {
   const {
     site: {
-      siteMetadata: { title, author, position, description },
+      siteMetadata: { author, position, description },
     },
   } = useStaticQuery(graphql`
     query MySiteMetadata {
@@ -21,13 +23,16 @@ const Profile = () => {
   `)
 
   return (
-    <div className="Profile-wrapper">
-      <Avatar />
-      <h1>{title}</h1>
-      <h2>{author}</h2>
-      <h3>{position}</h3>
-      <p>{description}</p>
-    </div>
+    <S.ProfileWrapper>
+      <S.ProfileLink>
+        <Avatar />
+        <S.ProfileAuthor>
+          {author}
+          <S.ProfilePosition>{position}</S.ProfilePosition>
+        </S.ProfileAuthor>
+      </S.ProfileLink>
+      {description}
+    </S.ProfileWrapper>
   )
 }
 
