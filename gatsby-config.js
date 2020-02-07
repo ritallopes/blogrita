@@ -3,7 +3,7 @@ module.exports = {
     title: `Blogrita`,
     description: `Meu blog de aprendizado de muita coisa e tudo mais`,
     author: `@ritallopes`,
-    position: `programmer`
+    position: `programmer`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -13,6 +13,19 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [],
       },
     },
     `gatsby-transformer-sharp`,
