@@ -6,7 +6,8 @@ const links = [
     {
         label:'About',
         url:'/about'
-    }
+    },
+    
 ]
 
 export default links
