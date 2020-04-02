@@ -6,9 +6,16 @@ export const LayoutWrapper = styled.section`
 `
 
 export const LayoutMain = styled.main`
-  background: #16202c;
+  background: var(--background);
   min-height: 100vh;
   padding: 0 3.75rem 0 23rem;
   width: 100%;
+
+
+  body#grid &{
+    grid-template-areas: "posts" 
+    "pagination";
+  }
 `
 
+//in body#grid use css grid
